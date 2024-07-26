@@ -318,8 +318,8 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form id="modal-form">
-                <label for="autoSizingInputGroup" class="col-form-label"
+              <form id="modal-form" onsubmit="closemodal()">
+                <label for="username" class="col-form-label"
                 >Username</label
               >
                 <div class="input-group">
@@ -327,7 +327,7 @@
                     required
                     type="text"
                     class="form-control"
-                    id="autoSizingInputGroup"
+                    id="username"
                     placeholder="Username"
                   />
                 </div>
@@ -338,7 +338,7 @@
                 </div>
 
                 <div class="col-auto">
-                  <label for="inputPassword6" class="col-form-label"
+                  <label for="password" class="col-form-label"
                     >Password</label
                   >
                 </div>
@@ -346,7 +346,7 @@
                   <input
                     required
                     type="password"
-                    id="inputPassword6"
+                    id="password"
                     class="form-control"
                     aria-describedby="passwordHelpInline"
                   />
@@ -357,6 +357,7 @@
                   </span>
                 </div>
                 <div>
+                  <button type="button" class="d-none btn-close" id="hidebtn" data-bs-dismiss="modal" aria-label="Close"></button>
                     <button id="btnmodal" class="btn btn-outline-dark my-2" type="submit">Login</button>
                 </div>
               </form>

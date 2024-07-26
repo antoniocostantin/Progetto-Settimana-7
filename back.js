@@ -124,20 +124,21 @@ const deleteProd = function () {
 let logged = false;
 let myModal = new bootstrap.Modal(document.getElementById("myModal"));
 
-window.addEventListener('load',function(){
+const closemodal = function(){
+  const usernameHTML = document.getElementById("username").value
+  const passwordHTML = document.getElementById("password").value
+  if(usernameHTML)
+    sessionStorage.setItem("username", `${usernameHTML}`)
+
+  if(passwordHTML)
+    sessionStorage.setItem("password", `${passwordHTML}`)
+}
+
+window.addEventListener("load",function(){
   let username = sessionStorage.getItem("username")
   let password = sessionStorage.getItem("password")
-  if(password && username){
+  if(!username && !password)
+    myModal.show()
+  else
     myModal.hide()
-  }
 })
-
-const modalformHTML = document.getElementById("modal-form")
-modalformHTML.addEventListener("submit",function(){
-  console.log("ciao")
-})
-
-if (!logged) {
-  myModal.show();
-  logged = false 
-}
