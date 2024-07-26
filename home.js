@@ -25,14 +25,17 @@ const creatCard = function(prods){
     console.log('Prods',prods)
     prods.forEach(prod => {
         console.log('Prod',prod)
-        const Card = `<div class="card my-2">
+        const Card = `
+        <div class="card my-2 ">
+        <a href="./details.html?prodId=${prod._id}" class="text-decoration-none text-dark">
         <img src="${prod.imageUrl}" class="card-img-top" alt="Prod Image">
         <div class="card-body">
         <h5 class="card-title">${prod.name}</h5>
-        <p class="card-text">${prod.description}</p>
-        <a href="./details.html?eventId=${prod._id}" class="btn text-decoration-none w-100 btn-outline-dark">View More</a>
+        <p class="card-text text-muted">${prod.description}</p>
+        <a href="./details.html?prodId=${prod._id}" class="btn my-3 text-decoration-none w-100 btn-outline-dark">View More</a>
         </div>
         </div>
+        </a>
         </div>`
         
         const HTMLrow = document.getElementById('events-row')
